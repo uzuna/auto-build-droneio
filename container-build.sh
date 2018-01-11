@@ -1,1 +1,0 @@
-docker build -t docker-registry:5000/auto-build-node .

@@ -4,7 +4,9 @@ pipeline:
     commands:
       - npm install
       - npm test
-  build-image:
-    image: docker
-    commands:
-      - docker build --rm -t docker-registry:5000/auto-build-node .
+  docker:
+    image: plugins/docker
+    repo: my-docker-registry:5000/auto-build-node
+    tags: latest
+    dockerfile: Dockerfile
+    registry: my-docker-registry:5000
