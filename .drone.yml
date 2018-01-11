@@ -4,4 +4,7 @@ pipeline:
     commands:
       - npm install
       - npm test
-      - sh ./container-build.sh
+  build-image:
+    image: docker
+    commands:
+      - docker build --rm -t docker-registry:5000/auto-build-node .
