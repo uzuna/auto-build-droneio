@@ -4,4 +4,4 @@ pipeline:
     commands:
       - npm install
       - npm test
-      - container-build.sh
+      - sh ./container-build.sh
