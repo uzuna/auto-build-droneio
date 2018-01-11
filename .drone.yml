@@ -1,6 +1,7 @@
 pipeline:
-  test:
+  build:
     image: node:8.9
     commands:
       - npm install
-      - npm run test
+      - npm test
+      - container-build.sh
