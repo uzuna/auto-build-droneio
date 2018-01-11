@@ -1,4 +1,6 @@
-image: node:8.9
-script:
-  - npm i
-  - npm test
+pipeline:
+  test:
+    image: node:8.9
+    commands:
+      - npm install
+      - npm run test
