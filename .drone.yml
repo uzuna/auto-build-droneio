@@ -1,0 +1,4 @@
+image: node:8.9
+script:
+  - npm i
+  - npm test

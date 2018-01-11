@@ -1,0 +1,22 @@
+{
+  "name": "auto-build-droneio",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/*.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.1",
+    "babel-plugin-espower": "^2.3.2",
+    "babel-plugin-jsdoc-to-assert": "^3.0.4",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
+    "mocha": "^4.1.0",
+    "power-assert": "^1.4.4"
+  }
+}
