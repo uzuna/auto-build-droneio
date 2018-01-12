@@ -7,15 +7,14 @@ pipeline:
   monit:
     image: docker
     commands:
-      - echo $REGISTRY_HOST
-      - echo $REGISTRY_USER
-      - echo $REGISTRY_PASS
+      - echo ${REGISTRY_HOST}
+      - echo ${REGISTRY_USER}
+      - echo ${REGISTRY_PASS}
 
   docker:
     image: plugins/docker
-    repo: ${REGISTRY_HOST}/auto-build-node
-    username: $REGISTRY_USER
-    password: $REGISTRY_PASS
+    repo: c892df72.ap.ngrok.io/auto-build-node
+    secrets: [ docker_username, docker_password ]
     tags: latest
     dockerfile: Dockerfile
-    registry: $REGISTRY_HOST
+    registry: c892df72.ap.ngrok.io
