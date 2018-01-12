@@ -6,7 +6,9 @@ pipeline:
       - npm test
   docker:
     image: plugins/docker
-    repo: my-docker-registry:5000/auto-build-node
+    repo: ${REGISTRY_HOST}/auto-build-node
+    username: $REGISTRY_USER
+    password: $REGISTRY_PASS
     tags: latest
     dockerfile: Dockerfile
-    registry: my-docker-registry:5000
+    registry: $REGISTRY_HOST
