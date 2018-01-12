@@ -4,6 +4,13 @@ pipeline:
     commands:
       - npm install
       - npm test
+  monit:
+    image: docker
+    commands:
+      - echo $REGISTRY_HOST
+      - echo $REGISTRY_USER
+      - echo $REGISTRY_PASS
+
   docker:
     image: plugins/docker
     repo: ${REGISTRY_HOST}/auto-build-node
