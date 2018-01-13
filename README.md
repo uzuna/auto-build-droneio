@@ -2,6 +2,11 @@ Drone ioを使ったCiとcontainer buildを試す
 
 
 
+### Memo
 
-docker build -t {REGISTRY_HOST}/auto-build-node .
-docker push {REGISTRY_HOST}/auto-build-node:latest
+Localでbuildしてpublishする時
+
+```
+docker build -t c892df72.ap.ngrok.io/auto-build-node .
+docker push c892df72.ap.ngrok.io/auto-build-node:latest
+```
