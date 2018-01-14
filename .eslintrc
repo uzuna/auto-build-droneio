@@ -26,7 +26,6 @@
     "no-eq-null": 2,
     "no-floating-decimal": 2,
     "no-multi-spaces": [2, {"exceptions": {"Property": true, "ImportDeclaration": true, "VariableDeclarator": true, "AssignmentExpression": true}}],
-    "space-infix-ops": 2,
     "no-self-compare": 2,
     "wrap-iife": [2, "inside"],
 
@@ -71,13 +70,6 @@
     "indent": [1, 2, { "MemberExpression": 1, "ObjectExpression": 1 }],
     "no-mixed-spaces-and-tabs": 0,
     "semi": [1, "always", { "omitLastInOneLineBlock": true}],
-    "key-spacing": ["error", {
-      "align": {
-        "beforeColon": true,
-        "afterColon": true,
-        "on": "colon"
-      }
-    }],
-    "require-jsdoc": 2,
+    "space-infix-ops": 2
   }
 }

@@ -14,7 +14,7 @@ export function generateDummyDict(str){
 }
 
 /**
- * 
+ * ダミーであることを表現
  */
 class DummyDict{}
 

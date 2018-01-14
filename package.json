@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "mocha test/*.js",
-    "lint": "eslint --fix src/**/*.js src/*.js",
+    "lint": "eslint --fix src/**/*.js test/*.js",
     "esdoc": "esdoc",
     "build": "rm -rf lib/* && DEBUG=production babel src -d lib",
     "watch": "babel --watch=./src --out-dir=./lib"
@@ -22,6 +22,12 @@
     "babel-register": "^6.26.0",
     "eslint": "^4.15.0",
     "mocha": "^4.1.0",
-    "power-assert": "^1.4.4"
+    "power-assert": "^1.4.4",
+    "supertest": "^3.0.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "compression": "^1.7.1",
+    "express": "^4.16.2"
   }
 }
