@@ -4,11 +4,24 @@ pipeline:
     commands:
       - npm install
       - npm test
+  monit:
+    image: docker
+    commands:
+      - echo "ci_tag ${CI_TAG}"
+      - echo DRONE_TAG ${DRONE_TAG}
+      - echo DRONE_COMMIT_AUTHOR ${DRONE_COMMIT_AUTHOR}
+      - echo DRONE_BUILD_NUMBER ${DRONE_BUILD_NUMBER}
+      - echo DRONE_BUILD_LINK ${DRONE_BUILD_LINK}
+      - echo DRONE_REPO_LINK ${DRONE_REPO_LINK}
+      - echo DRONE_COMMIT_REF ${DRONE_COMMIT_REF}
+      - echo DRONE_COMMIT_BRANCH ${DRONE_COMMIT_BRANCH}
+
   docker:
     image: plugins/docker
-    repo: ${REGISTRY_HOST}/auto-build-node
-    username: $REGISTRY_USER
-    password: $REGISTRY_PASS
-    tags: latest
+    repo: ead4dcaa.ap.ngrok.io/auto-build-node
+    secrets: [ docker_username, docker_password ]
+    tags: ["latest", "${DRONE_COMMIT_BRANCH}"]
     dockerfile: Dockerfile
-    registry: $REGISTRY_HOST
+    registry: ead4dcaa.ap.ngrok.io
+    when:
+      branch: ["master", "release/*"]

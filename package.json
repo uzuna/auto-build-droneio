@@ -2,9 +2,13 @@
   "name": "auto-build-droneio",
   "version": "0.1.0",
   "description": "",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "test": "mocha test/*.js"
+    "test": "mocha test/*.js",
+    "lint": "eslint --fix src/**/*.js test/*.js",
+    "esdoc": "esdoc",
+    "build": "rm -rf lib/* && DEBUG=production babel src -d lib",
+    "watch": "babel --watch=./src --out-dir=./lib"
   },
   "keywords": [],
   "author": "",
@@ -16,7 +20,14 @@
     "babel-plugin-jsdoc-to-assert": "^3.0.4",
     "babel-preset-env": "^1.6.1",
     "babel-register": "^6.26.0",
+    "eslint": "^4.15.0",
     "mocha": "^4.1.0",
-    "power-assert": "^1.4.4"
+    "power-assert": "^1.4.4",
+    "supertest": "^3.0.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "compression": "^1.7.1",
+    "express": "^4.16.2"
   }
 }

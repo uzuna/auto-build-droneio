@@ -1,0 +1,75 @@
+{
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "allowImportExportEverywhere": false
+  },
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "rules": {
+    "no-reserved-keys": 0,
+
+    "no-console": [2, { allow: ["warn", "error", "info"] }],
+    "no-constant-condition": 1,
+    "no-debugger": 1,
+    "no-extra-parens": 1,
+
+    "no-extra-boolean-cast": 0,
+
+    "block-scoped-var": 2,
+    "curly": [2, "all"],
+    "default-case": 2,
+    "no-div-regex": 2,
+    "no-else-return": 0,
+    "no-eq-null": 2,
+    "no-floating-decimal": 2,
+    "no-multi-spaces": [2, {"exceptions": {"Property": true, "ImportDeclaration": true, "VariableDeclarator": true, "AssignmentExpression": true}}],
+    "no-self-compare": 2,
+    "wrap-iife": [2, "inside"],
+
+    "complexity": [1, 8],
+    "dot-notation": 1,
+    "guard-for-in": 1,
+    "no-extend-native": 1,
+    "no-iterator": 1,
+    "no-loop-func": 1,
+    "no-multi-str": 1,
+    "no-process-env": 1,
+    "no-proto": 1,
+    "no-throw-literal": 1,
+    "no-unused-expressions": 0,
+    "radix": 1,
+
+    "no-alert": 1,
+    "no-extra-bind": 1,
+    "yoda": 1,
+
+    "strict": 0,
+
+    "no-catch-shadow": 2,
+    "no-invalid-this": 0,
+    "no-labels": 2,
+    "no-new-wrappers": 2,
+    "no-new": 2,
+    "no-useless-call": 2,
+    "no-useless-concat": 2,
+    "no-with": 2,
+
+    "arrow-parens": [2, "always"],
+    "arrow-spacing": [2, { "before": true, "after": true }],
+    "no-dupe-class-members": 2,
+    "no-var": 2,
+    "prefer-const": 1,
+
+    "block-spacing": 1,
+    "camelcase": 0,
+    "comma-spacing": [1, { "before": false, "after": true }],
+    "eol-last": 0,
+    "indent": [1, 2, { "MemberExpression": 1, "ObjectExpression": 1 }],
+    "no-mixed-spaces-and-tabs": 0,
+    "semi": [1, "always", { "omitLastInOneLineBlock": true}],
+    "space-infix-ops": 2
+  }
+}
