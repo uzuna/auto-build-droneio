@@ -10,11 +10,15 @@ pipeline:
       - echo ${REGISTRY_HOST}
       - echo ${REGISTRY_USER}
       - echo ${REGISTRY_PASS}
+      - echo "commit ${DRONE_COMMIT}"
+      - echo commit ${DRONE_TAG}
+      - echo commit ${TAG}
+      - echo commit $$TAG
 
   docker:
     image: plugins/docker
     repo: ead4dcaa.ap.ngrok.io/auto-build-node
     secrets: [ docker_username, docker_password ]
-    tags: ["latest", ${TAG}]
+    tags: ["latest", "${TAG}"]
     dockerfile: Dockerfile
     registry: ead4dcaa.ap.ngrok.io
