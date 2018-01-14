@@ -15,6 +15,6 @@ pipeline:
     image: plugins/docker
     repo: ead4dcaa.ap.ngrok.io/auto-build-node
     secrets: [ docker_username, docker_password ]
-    tags: latest
+    tags: ["latest", $$TAG]
     dockerfile: Dockerfile
     registry: ead4dcaa.ap.ngrok.io
