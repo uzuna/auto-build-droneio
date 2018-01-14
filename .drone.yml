@@ -17,6 +17,6 @@ pipeline:
     image: plugins/docker
     repo: ead4dcaa.ap.ngrok.io/auto-build-node
     secrets: [ docker_username, docker_password ]
-    tags: ["latest", "${DRONE_COMMIT_BRANCH}"]
+    tags: ["latest", "${DRONE_COMMIT_BRANCH}", "${##v}"]
     dockerfile: Dockerfile
     registry: ead4dcaa.ap.ngrok.io
