@@ -13,8 +13,8 @@ pipeline:
 
   docker:
     image: plugins/docker
-    repo: c892df72.ap.ngrok.io/auto-build-node
+    repo: ead4dcaa.ap.ngrok.io/auto-build-node
     secrets: [ docker_username, docker_password ]
     tags: latest
     dockerfile: Dockerfile
-    registry: c892df72.ap.ngrok.io
+    registry: ead4dcaa.ap.ngrok.io
