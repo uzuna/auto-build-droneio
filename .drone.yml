@@ -9,7 +9,10 @@ pipeline:
     commands:
       - echo "ci_tag ${CI_TAG}"
       - echo DRONE_TAG ${DRONE_TAG}
+      - echo DRONE_COMMIT_AUTHOR ${DRONE_COMMIT_AUTHOR}
       - echo DRONE_BUILD_NUMBER ${DRONE_BUILD_NUMBER}
+      - echo DRONE_BUILD_LINK ${DRONE_BUILD_LINK}
+      - echo DRONE_REPO_LINK ${DRONE_REPO_LINK}
       - echo DRONE_COMMIT_REF ${DRONE_COMMIT_REF}
       - echo DRONE_COMMIT_BRANCH ${DRONE_COMMIT_BRANCH}
 
@@ -17,6 +20,8 @@ pipeline:
     image: plugins/docker
     repo: ead4dcaa.ap.ngrok.io/auto-build-node
     secrets: [ docker_username, docker_password ]
-    tags: ["latest", "${DRONE_COMMIT_BRANCH}", "${DRONE_TAG##v}"]
+    tags: ["latest", "${DRONE_COMMIT_BRANCH}"]
     dockerfile: Dockerfile
     registry: ead4dcaa.ap.ngrok.io
+    when:
+      branch: ["master", "release/*"]
