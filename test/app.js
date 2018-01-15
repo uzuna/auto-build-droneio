@@ -8,9 +8,9 @@ import {app, server} from '../src/server';
 
 describe("Server", () => {
   const agent = request.agent(app);
-  after(()=>{
+  after(() => {
     server.close();
-  })
+  });
   it('Echo', async function(){
     const res = await agent
       .get('/echo')
@@ -23,7 +23,7 @@ describe("Server", () => {
 
   it('route f', async function(){
     const code = `function f(data){
-      return data[['n10']] + data['n50'] + 30
+      return data['n10'] + data['n50'] + 30
     }`;
     const body = "n10,n50";
     const res = await agent
@@ -35,9 +35,9 @@ describe("Server", () => {
     assert(res.body.result === 90);
   });
 
-  it('route f', async function(){
+  it('route f: fail', async function(){
     const code = `function f(data){
-      return data[['n10']] + data['n50'] + 30 +de
+      return data['n10'] + data['n50'] + 30 +de
     }`;
     const body = "n10,n50";
     const res = await agent
@@ -47,5 +47,21 @@ describe("Server", () => {
     assert(res.status === 400);
     assert(res.type === 'text/plain');
     assert(/ReferenceError/.test(res.text));
+  });
+
+  it('route fx', async function(){
+    const code = `function f(data){
+      return data['n90'] + data['n50'] + -20
+    }`;
+    const res = await agent
+      .get('/fx')
+      .query({code});
+    
+    assert(res.status === 200);
+    assert(res.type === 'application/json');
+    assert(res.body.result === 120);
+    // assert(res.status === 400);
+    // assert(res.type === 'text/plain');
+    // assert(/ReferenceError/.test(res.text));
   });
 });

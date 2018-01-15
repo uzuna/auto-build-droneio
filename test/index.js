@@ -20,7 +20,7 @@ describe("Dummy", () => {
 
   it('generateF', async function(){
     const code = `function f(data){
-      return data[['n10']] + data['n50'] + 30
+      return data['n10'] + data['n50'] + 30
     }`;
     const f = generateF(code);
     assert(f instanceof Function);
